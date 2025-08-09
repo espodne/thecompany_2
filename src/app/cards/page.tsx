@@ -16,7 +16,7 @@ export default function Cards() {
         {cards.map((card) => (
           <div
             key={card.id}
-            className={`${card.rotation}  h-[420px] w-[350px] bg-white shadow-lg mb-8 break-inside-avoid transform transition-transform hover:scale-105 hover:rotate-0 p-3 flex flex-col`}
+            className={`${card.rotation}  h-[420px] w-[350px] bg-white shadow-lg mb-8 break-inside-avoid p-3 flex flex-col`}
             style={{
               borderRadius: '12px',
               boxShadow: '0 8px 25px rgba(0,0,0,0.15)',
