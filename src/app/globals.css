@@ -24,3 +24,46 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Более жесткий snap scroll */
+.snap-container {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
+  overscroll-behavior-y: none;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+@keyframes bgFade {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #C8C8C8;
+  }
+}
+
+.animate-bg-fade {
+  background-color: transparent;
+  animation: bgFade 1s ease-out forwards;
+  animation-timeline: view();
+  animation-range: entry 0% entry 50%;
+}
+
+/* Fallback для браузеров без поддержки view() */
+@supports not (animation-timeline: view()) {
+  .animate-bg-fade {
+    animation: none;
+    background-color: transparent;
+    transition: background-color 4s ease-out;
+  }
+  
+  .animate-bg-fade:hover,
+  .animate-bg-fade.in-view {
+    background-color: #C8C8C8;
+  }
+}
