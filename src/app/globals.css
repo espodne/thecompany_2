@@ -37,7 +37,7 @@ body {
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
-
+/* 
 @keyframes bgFade {
   0% {
     background-color: transparent;
@@ -54,7 +54,7 @@ body {
   animation-range: entry 0% entry 50%;
 }
 
-/* Fallback для браузеров без поддержки view() */
+
 @supports not (animation-timeline: view()) {
   .animate-bg-fade {
     animation: none;
@@ -66,4 +66,4 @@ body {
   .animate-bg-fade.in-view {
     background-color: #C8C8C8;
   }
-}
+} */

@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { supabase } from '../../lib/supabase';
 
 interface Card {
@@ -38,6 +38,7 @@ export default function Cards({ onCardClick }: CardsProps = {}) {
   useEffect(() => {
     fetchImages();
   }, []);
+
 
   const fetchImages = async () => {
     try {
@@ -127,21 +128,24 @@ export default function Cards({ onCardClick }: CardsProps = {}) {
         {cards.map((card) => (
           <div
             key={card.id}
-            className={`${card.rotation} h-[420px] w-[350px] bg-white shadow-lg mb-8 break-inside-avoid p-3 flex flex-col cursor-pointer hover:shadow-xl transition-shadow duration-300`}
+            className={`${card.rotation} h-[420px] w-[350px] bg-white mb-8 break-inside-avoid p-3 flex flex-col cursor-pointer  duration-300`}
             style={{
               borderRadius: '12px',
-              boxShadow: '0 8px 25px rgba(0,0,0,0.15)',
             }}
             onClick={onCardClick}
           >
             <div className="bg-white p-2 mb-1">
-              <div className="w-full h-[280px]">
+              <div 
+                id={`card-image-${card.id}`}
+                className="w-full h-[280px] relative rounded-md overflow-hidden"
+                style={{ position: 'relative' }}
+              >
                 <Image 
                   src={card.image} 
                   alt="Polaroid photo" 
                   width={200} 
                   height={200}
-                  className="w-full h-full object-cover rounded-md"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>

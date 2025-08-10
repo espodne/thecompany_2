@@ -48,7 +48,7 @@ export default function Home() {
         </div>
 
         {/* 2 */}
-        <div className="flex p-10 flex-col items-center min-h-screen snap-start relative animate-bg-fade" style={{ scrollSnapStop: 'always' }}>
+        <div className="flex p-10 flex-col items-center bg-[#F3F3F3] min-h-screen snap-start relative animate-bg-fade" style={{ scrollSnapStop: 'always' }}>
           <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
             <Image src="/title.svg" alt="Next.js" width={200} height={200} />
           </div>
