@@ -44,18 +44,18 @@ export default function Home() {
             <Image src="/title.svg" alt="Next.js" width={450} height={450} />
           </div>
           <p className="max-w-md text-center mt-4">Мы помогаем брендам делать праздники и события атмосферными и запоминающимися на долгие годы</p>
-          <button onClick={openModal} className="bg-black text-white px-4 py-2 rounded-full absolute bottom-8">написать нам</button>
+          <button onClick={openContactModal} className="bg-black text-white px-4 py-2 rounded-full absolute bottom-8">написать нам</button>
         </div>
 
-                 {/* 2 */}
-                   <div className="flex p-10 flex-col items-center min-h-screen snap-start relative animate-bg-fade" style={{ scrollSnapStop: 'always' }}>
+        {/* 2 */}
+        <div className="flex p-10 flex-col items-center min-h-screen snap-start relative animate-bg-fade" style={{ scrollSnapStop: 'always' }}>
           <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
             <Image src="/title.svg" alt="Next.js" width={200} height={200} />
           </div>
           <div className="m-16">
-            <Cards />
+            <Cards onCardClick={openModal} />
           </div>
-          <button onClick={openModal} className="bg-black text-white px-4 py-2 rounded-full absolute bottom-8">написать нам</button>
+          <button onClick={openContactModal} className="bg-black text-white px-4 py-2 rounded-full absolute bottom-8">написать нам</button>
         </div>
 
         {/* 3 */}
