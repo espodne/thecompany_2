@@ -147,7 +147,9 @@ export default function Cards({ onCardClick }: CardsProps = {}) {
                   height={200}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 film-grain opacity-60 pointer-events-none"></div>
+                <div 
+                  className={`absolute inset-0 film-grain opacity-60 pointer-events-none ${card.rotation}`}
+                ></div>
               </div>
             </div>
             <div className="text-center space-y-1 flex flex-col justify-center flex-1">

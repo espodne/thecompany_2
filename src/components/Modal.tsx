@@ -100,13 +100,16 @@ export default function Modal({ isOpen, onClose, showCarousel = true }: ModalPro
                       zIndex: index === currentSlide ? 10 : 1
                     }}
                   >
-                    <Image 
-                      src={slide.image} 
-                      alt={`Slide ${slide.id}`} 
-                      width={360} 
-                      height={360}
-                      className="w-full h-full object-cover shadow-xl"
-                    />
+                    <div className="relative w-full h-full overflow-hidden rounded-md">
+                      <Image 
+                        src={slide.image} 
+                        alt={`Slide ${slide.id}`} 
+                        width={360} 
+                        height={360}
+                        className="w-full h-full object-cover shadow-xl"
+                      />
+                      <div className="absolute inset-0 film-grain opacity-60 pointer-events-none"></div>
+                    </div>
                   </div>
                 ))}
               </div>
