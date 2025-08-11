@@ -44,7 +44,7 @@ export default function Home() {
             <Image src="/title.svg" alt="Next.js" width={450} height={450} />
           </div>
           <p className="max-w-md text-center mt-4">Мы помогаем брендам делать праздники и события атмосферными и запоминающимися на долгие годы</p>
-          <button onClick={openContactModal} className="bg-black text-white px-4 py-2 rounded-full absolute bottom-8">написать нам</button>
+          <button onClick={openContactModal} className="bg-[#1f1f1f] cursor-pointer hover:bg-[#000] hover:text-white transition-all duration-300 text-white px-4 py-2 rounded-full absolute bottom-8">написать нам</button>
         </div>
 
         {/* 2 */}
@@ -55,7 +55,7 @@ export default function Home() {
           <div className="m-16">
             <Cards onCardClick={openModal} />
           </div>
-          <button onClick={openContactModal} className="bg-black text-white px-4 py-2 rounded-full absolute bottom-8">написать нам</button>
+          <button onClick={openContactModal} className="bg-[#1f1f1f] cursor-pointer hover:bg-[#000] hover:text-white transition-all duration-300 text-white px-4 py-2 rounded-full absolute bottom-8">написать нам</button>
         </div>
 
         {/* 3 */}
@@ -71,7 +71,7 @@ export default function Home() {
             <p className="max-w-md text-center mt-4">Московская помпания это союз Светланы Мухиной — Ex. главреда GQ и со-основателя доствки цветов Lupine, и Дарьи Ледневой —, основанный в начале 2024 года</p>
           </div>
 
-          <button onClick={openContactModal} className="bg-black text-white px-4 py-2 rounded-full absolute bottom-8 left-1/2 transform -translate-x-1/2">написать нам</button>
+          <button onClick={openContactModal} className="bg-[#1f1f1f] cursor-pointer hover:bg-[#000] hover:text-white transition-all duration-300 text-white px-4 py-2 rounded-full absolute bottom-8 left-1/2 transform -translate-x-1/2">написать нам</button>
         </div>
       </div>
     </>

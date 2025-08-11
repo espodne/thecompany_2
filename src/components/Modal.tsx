@@ -126,7 +126,7 @@ export default function Modal({ isOpen, onClose, showCarousel = true }: ModalPro
      
       
       <div className="flex justify-center pb-8">
-        <button onClick={onClose} className="bg-white text-black px-4 py-2 rounded-full">
+        <button onClick={onClose} className="bg-white cursor-pointer hover:bg-[#545454] hover:text-white transition-all duration-300 text-black px-4 py-2 rounded-full">
           Закрыть х
         </button>
       </div>

@@ -37,33 +37,29 @@ body {
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
-/* 
-@keyframes bgFade {
-  0% {
-    background-color: transparent;
-  }
-  100% {
-    background-color: #C8C8C8;
-  }
+
+.film-grain::before {
+  content: "";
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png");
+  height: 300%;
+  width: 300%;
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  opacity: 0.15;
+  animation: animateGrain 8s steps(10) infinite;
+  pointer-events: none;
 }
 
-.animate-bg-fade {
-  background-color: transparent;
-  animation: bgFade 1s ease-out forwards;
-  animation-timeline: view();
-  animation-range: entry 0% entry 50%;
+@keyframes animateGrain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, -20%); }
+  30% { transform: translate(-5%, -10%); }
+  40% { transform: translate(-15%, -20%); }
+  50% { transform: translate(-5%, -10%); }
+  60% { transform: translate(-15%, -20%); }
+  70% { transform: translate(-5%, -10%); }
+  80% { transform: translate(-15%, -20%); }
+  90% { transform: translate(-5%, -10%); }
 }
-
-
-@supports not (animation-timeline: view()) {
-  .animate-bg-fade {
-    animation: none;
-    background-color: transparent;
-    transition: background-color 4s ease-out;
-  }
-  
-  .animate-bg-fade:hover,
-  .animate-bg-fade.in-view {
-    background-color: #C8C8C8;
-  }
-} */
