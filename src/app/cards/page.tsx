@@ -9,10 +9,11 @@ interface Card {
   text: string;
   date: string;
   rotation: string;
+  folderName?: string;
 }
 
 interface CardsProps {
-  onCardClick?: () => void;
+  onCardClick?: (card: Card) => void;
 }
 
 export default function Cards({ onCardClick }: CardsProps = {}) {
@@ -81,7 +82,8 @@ export default function Cards({ onCardClick }: CardsProps = {}) {
                 image: data.publicUrl,
                 text: defaultCards[cardIndex]?.text || "Проект компании",
                 date: defaultCards[cardIndex]?.date || "2024",
-                rotation: rotations[cardIndex % rotations.length]
+                rotation: rotations[cardIndex % rotations.length],
+                folderName: folder.name // Сохраняем имя папки проекта
               });
               
               cardIndex++; // Увеличиваем индекс только при успешном добавлении карточки
@@ -95,7 +97,10 @@ export default function Cards({ onCardClick }: CardsProps = {}) {
         // Если меньше 10 карточек, дополняем fallback данными
         if (cardsWithImages.length < 10) {
           const remaining = 10 - cardsWithImages.length;
-          const fallbackCards = defaultCards.slice(cardsWithImages.length, cardsWithImages.length + remaining);
+          const fallbackCards = defaultCards.slice(cardsWithImages.length, cardsWithImages.length + remaining).map(card => ({
+            ...card,
+            folderName: undefined
+          }));
           setCards([...cardsWithImages, ...fallbackCards]);
         } else {
           setCards(cardsWithImages);
@@ -132,7 +137,7 @@ export default function Cards({ onCardClick }: CardsProps = {}) {
             style={{
               borderRadius: '12px',
             }}
-            onClick={onCardClick}
+            onClick={() => onCardClick?.(card)}
           >
             <div className="bg-white p-2 mb-1">
               <div 

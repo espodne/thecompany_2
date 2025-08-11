@@ -5,12 +5,28 @@ import Modal from '../components/Modal';
 import Polaroids from '../components/Polaroids';
 import { useState, useEffect } from 'react';
 
+interface Card {
+  id: number;
+  image: string;
+  text: string;
+  date: string;
+  rotation: string;
+  folderName?: string;
+}
+
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState<Card | null>(null);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const openModal = (card: Card) => {
+    setSelectedCard(card);
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedCard(null);
+  };
   const openContactModal = () => setIsContactModalOpen(true);
   const closeContactModal = () => setIsContactModalOpen(false);
 
@@ -32,7 +48,7 @@ export default function Home() {
 
   return (
     <>
-      <Modal isOpen={isModalOpen} onClose={closeModal} showCarousel={true} />
+      <Modal isOpen={isModalOpen} onClose={closeModal} showCarousel={true} selectedCard={selectedCard} />
       <Modal isOpen={isContactModalOpen} onClose={closeContactModal} showCarousel={false} />
 
       <div className="h-screen overflow-y-scroll snap-y snap-mandatory" style={{ scrollSnapStop: 'always', overscrollBehaviorY: 'none' }}>
