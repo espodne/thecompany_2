@@ -83,18 +83,16 @@ export default function Cards({ onCardClick }: CardsProps = {}) {
                 text: defaultCards[cardIndex]?.text || "Проект компании",
                 date: defaultCards[cardIndex]?.date || "2024",
                 rotation: rotations[cardIndex % rotations.length],
-                folderName: folder.name // Сохраняем имя папки проекта
+                folderName: folder.name 
               });
               
-              cardIndex++; // Увеличиваем индекс только при успешном добавлении карточки
+              cardIndex++; 
             }
-            // Если файлов нет - просто пропускаем эту папку и идем к следующей
           }
         }
         
         console.log('Найдено карточек с изображениями:', cardsWithImages.length);
         
-        // Если меньше 10 карточек, дополняем fallback данными
         if (cardsWithImages.length < 10) {
           const remaining = 10 - cardsWithImages.length;
           const fallbackCards = defaultCards.slice(cardsWithImages.length, cardsWithImages.length + remaining).map(card => ({
@@ -124,8 +122,7 @@ export default function Cards({ onCardClick }: CardsProps = {}) {
     );
   }
 
-  // Вычисляем примерную высоту на основе количества карточек
-  const containerHeight = Math.ceil(cards.length / 2) * 450; // ~450px на ряд
+  const containerHeight = Math.ceil(cards.length / 2) * 450;
   
   return (
     <div className="w-full max-w-4xl px-4" style={{ minHeight: `${containerHeight}px` }}>
@@ -153,7 +150,7 @@ export default function Cards({ onCardClick }: CardsProps = {}) {
                   className="w-full h-full object-cover"
                 />
                 <div 
-                  className={`absolute inset-0 film-grain opacity-60 pointer-events-none ${card.rotation}`}
+                  className={`absolute inset-0 film-grain opacity-40 pointer-events-none ${card.rotation}`}
                 ></div>
               </div>
             </div>

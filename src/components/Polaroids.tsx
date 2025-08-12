@@ -10,7 +10,7 @@ export default function Polaroids() {
             <Image src="/3.svg" alt="Mini polaroid" width={80} height={60} className="w-full h-full object-cover" />
           </div>
           <div className="text-center pt-1">
-            <p className="text-[6px] text-gray-800 uppercase">офис</p>
+            <div className="h-[6px]"></div>
           </div>
         </div>
       </div>
@@ -21,7 +21,7 @@ export default function Polaroids() {
             <Image src="/3.svg" alt="Mini polaroid" width={80} height={60} className="w-full h-full object-cover" />
           </div>
           <div className="text-center pt-1">
-            <p className="text-[6px] text-gray-800 uppercase">кафе</p>
+            <div className="h-[6px]"></div>
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@ export default function Polaroids() {
             <Image src="/3.svg" alt="Mini polaroid" width={80} height={60} className="w-full h-full object-cover" />
           </div>
           <div className="text-center pt-1">
-            <p className="text-[6px] text-gray-800 uppercase">магазин</p>
+            <div className="h-[6px]"></div>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@ export default function Polaroids() {
             <Image src="/3.svg" alt="Mini polaroid" width={80} height={60} className="w-full h-full object-cover" />
           </div>
           <div className="text-center pt-1">
-            <p className="text-[6px] text-gray-800 uppercase">ресторан</p>
+            <div className="h-[6px]"></div>
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@ export default function Polaroids() {
             <Image src="/3.svg" alt="Mini polaroid" width={80} height={60} className="w-full h-full object-cover" />
           </div>
           <div className="text-center pt-1">
-            <p className="text-[6px] text-gray-800 uppercase">событие</p>
+            <div className="h-[6px]"></div>
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@ export default function Polaroids() {
             <Image src="/3.svg" alt="Mini polaroid" width={80} height={60} className="w-full h-full object-cover" />
           </div>
           <div className="text-center pt-1">
-            <p className="text-[6px] text-gray-800 uppercase">декор</p>
+            <div className="h-[6px]"></div>
           </div>
         </div>
       </div>
